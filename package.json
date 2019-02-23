@@ -1,0 +1,14 @@
+{
+  "name": "achercasky-matesulis-telegram-bot",
+  "version": "1.0.0",
+  "description": "Bot for responds to the word mate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ariel Chercasky",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
