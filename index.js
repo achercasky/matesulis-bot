@@ -1,23 +1,21 @@
 require('dotenv').config()
 
 const Telegraf = require('telegraf')
+const fs = require('fs')
+
+// Variables
+let JSON_PATH = "phrases.json"
 
 const bot = new Telegraf(process.env.TOKEN)
 
-var frases = [
-    'Salen unos matesulis',
-    'Encendamos los motores',
-    'Esta para unos Matthew mcconaughey',
-    'Esta para unos matienzos',
-    'Sale unos Matt Damon?',
-    'Que ganas de unos matematicos'
-]
+const phrasesContent = fs.readFileSync(JSON_PATH)
+const phrases = JSON.parse(phrasesContent)
 
 bot.hears(/mate/i, (ctx) => {
 
-    var random = Math.floor(Math.random() * frases.length);
+    var random = Math.floor(Math.random() * phrases.length);
 
-    ctx.reply(frases[random])
+    ctx.reply(phrases[random])
 })
 
 console.log("Matesulis start working..")
